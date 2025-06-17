@@ -11,9 +11,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\ArticuloController::class, 'index'])->name('home');
 Route::get('/articulos', [ArticuloController::class, 'index'])->name('articulos.index');
-Route::get('/articulos/{id}', [ArticuloController::class, 'show'])->name('articulos.show');
 Route::get('/articulos/buscar', [ArticuloController::class, 'buscar'])->name('articulos.buscar');
 Route::get('/articulos/busqueda-avanzada', [ArticuloController::class, 'busquedaAvanzada'])->name('articulos.busquedaAvanzada');
+Route::get('/articulos/{articulo}', [ArticuloController::class, 'show'])->name('articulos.show');
 
 
 Route::post('/articulos/{id}/comprar', [CompraController::class, 'comprar'])->middleware('auth')->name('comprar.articulo');
